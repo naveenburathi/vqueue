@@ -5,6 +5,44 @@ const theme = createTheme({
     keys: ["xs", "sm", "md", "lg", "xl"],
     values: { xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920 }
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "*": {
+          boxSizing: "border-box",
+          margin: 0,
+          padding: 0
+        },
+        a: {
+          textDecoration: "none",
+          color: "inherit"
+        },
+        html: {
+          MozOsxFontSmoothing: "grayscale",
+          WebkitFontSmoothing: "antialiased",
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100%",
+          width: "100%"
+        },
+        body: {
+          display: "flex",
+          flex: "1 1 auto",
+          flexDirection: "column",
+          minHeight: "100%",
+          width: "100%"
+        }
+      }
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        colorPrimary: {
+          backgroundColor: "#222B45",
+          color: "#eee"
+        }
+      }
+    }
+  },
   direction: "ltr",
   mixins: {
     toolbar: {
@@ -23,6 +61,7 @@ const theme = createTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 400,
     fontWeightBold: 400,
+    color: "#eee",
     h1: {
       fontSize: "3rem"
     },
@@ -41,23 +80,24 @@ const theme = createTheme({
     shape: { borderRadius: 0 }
   },
   palette: {
+    mode: "dark",
     primary: {
-      light: "#7986cb",
-      main: "#3f51b5",
-      dark: "#303f9f",
-      contrastText: "#fff"
+      light: "#33CC70",
+      main: "#00AB55",
+      dark: "#009357",
+      contrastText: "rgba(0, 0, 0, 0.87)"
     },
     secondary: {
-      light: "#ff4081",
-      main: "#f50057",
-      dark: "#c51162",
-      contrastText: "#fff"
+      light: "#ffb74d",
+      main: "#f9b934",
+      dark: "#FF9800",
+      contrastText: "rgba(0, 0, 0, 0.87)"
     },
     error: {
       light: "#e57373",
       main: "#f44336",
       dark: "#d32f2f",
-      contrastText: "#fff"
+      contrastText: "rgba(0, 0, 0, 0.87)"
     },
     warning: {
       light: "#ffb74d",
@@ -69,7 +109,7 @@ const theme = createTheme({
       light: "#64b5f6",
       main: "#2196f3",
       dark: "#1976d2",
-      contrastText: "#fff"
+      contrastText: "#rgba(0, 0, 0, 0.87)"
     },
     success: {
       light: "#81c784",
@@ -95,6 +135,13 @@ const theme = createTheme({
     },
     contrastThreshold: 3,
     tonalOffset: 0.2,
+    text: {
+      primary: "#eee"
+    },
+    background: {
+      paper: "#222B45",
+      default: "#1A2138"
+    },
     action: {
       disabledOpacity: 0.38,
       focusOpacity: 0.12

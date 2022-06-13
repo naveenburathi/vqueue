@@ -8,12 +8,14 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Project Imports
 import Home from "./pages/Home";
 import theme from "./assets/theme";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
