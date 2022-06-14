@@ -41,6 +41,14 @@ const theme = createTheme({
           color: "#eee"
         }
       }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          textTransform: "inherit"
+        }
+      }
     }
   },
   direction: "ltr",
@@ -55,7 +63,7 @@ const theme = createTheme({
   },
   typography: {
     htmlFontSize: 16,
-    fontFamily: ["Poppins", "Raleway", "Open Sans"].join(","),
+    fontFamily: ["Inter", "Poppins", "Open Sans"].join(","),
     fontSize: 14,
     fontWeightLight: 400,
     fontWeightRegular: 400,
@@ -63,10 +71,10 @@ const theme = createTheme({
     fontWeightBold: 400,
     color: "#eee",
     h1: {
-      fontSize: "3rem"
+      fontSize: "3.75rem"
     },
     h2: {
-      fontSize: "2.5rem"
+      fontSize: "3.75rem"
     },
     h3: {
       fontSize: "2.25rem"
@@ -76,6 +84,17 @@ const theme = createTheme({
     },
     h5: {
       fontSize: "1.5rem"
+    },
+    h6: {
+      fontSize: "1.2rem",
+      color: "#eee"
+    },
+    button: {
+      fontSize: ".99rem"
+    },
+    body1: {
+      fontSize: "1rem",
+      color: "#aeb0b4"
     },
     shape: { borderRadius: 0 }
   },
