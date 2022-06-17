@@ -19,6 +19,7 @@ import lottie from "lottie-web";
 import CContainer from "../components/CContainer";
 import waiting from "../assets/animations/waiting.json";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Feature = ({ fname, fdesc }) => {
   return (
@@ -82,6 +83,7 @@ const Home = () => {
 
   return (
     <>
+      <Navbar />
       <Box>
         <CContainer>
           <Grid container spacing={4}>
@@ -111,7 +113,10 @@ const Home = () => {
                     alignItems: "flex-start",
                     flexDirection: { xs: "column", sm: "row" }
                   }}>
-                  <Button variant="contained" sx={{ width: { xs: "100%", md: "auto" } }}>
+                  <Button
+                    variant="contained"
+                    sx={{ width: { xs: "100%", md: "auto" } }}
+                    href="/auth">
                     Login Now
                   </Button>
                   <Button

@@ -9,15 +9,17 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Home from "./pages/Home";
 import theme from "./assets/theme";
 import Navbar from "./components/Navbar";
+import Auth from "./pages/Auth";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<Auth />} />
         </Routes>
       </Router>
     </ThemeProvider>

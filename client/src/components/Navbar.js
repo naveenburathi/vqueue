@@ -48,7 +48,9 @@ const Navbar = (props) => {
                 VQ
               </Typography>
               <Box flex={1} />
-              <Button variant="contained">Login Now</Button>
+              <Button variant="contained" href="/auth">
+                Login Now
+              </Button>
             </Toolbar>
           </Container>
         </AppBar>
