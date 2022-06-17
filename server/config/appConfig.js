@@ -5,7 +5,7 @@ import logger from "morgan";
 
 // project imports
 import router from "../router.js";
-import handleError from "../middlewares/error.js";
+import handleError from "../middlewares/handleError.js";
 import ErrorMessage from "../utils/errorMessage.js";
 
 const configureExpress = (app) => {
