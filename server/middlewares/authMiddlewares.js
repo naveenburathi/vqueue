@@ -9,18 +9,19 @@ export const isAuth = async (req, res, next) => {
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
   ) {
-    token = req.headers.authorization.split(" ")[1];
-    jwt
-      .verify(token, process.env.JWT_SECRET)
-      .then((decoded) => {
-        User.findById(decoded._id)
-          .then((user) => {
-            req.user = user;
-            next();
-          })
-          .catch((err) => next(err));
-      })
-      .catch(() => next(new ErrorMessage("Access Denied", 401)));
+    try {
+      token = req.headers.authorization.split(" ")[1];
+
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      User.findById(decoded._id)
+        .then((user) => {
+          req.user = user;
+          next();
+        })
+        .catch((err) => next(err));
+    } catch (error) {
+      next(new ErrorMessage("Access Denied", 401));
+    }
   }
   if (!token) next(new ErrorMessage("Not authorized, no token", 401));
 };

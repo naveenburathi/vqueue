@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const queueSchema = mongoose.Schema(
   {
     uuid: { type: String, default: uuidv4() },
-    name: String,
+    name: { type: String, unique: true },
     avgTime: Number,
     owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     members: [
@@ -13,7 +13,7 @@ const queueSchema = mongoose.Schema(
         _id: false,
       },
     ],
-    description: String,
+    desc: String,
   },
   { timestamps: true }
 );
