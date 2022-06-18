@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema(
     email: { type: String, unique: true },
     mobile: { type: String },
     isEmailVerified: { type: Boolean, default: false },
-    password: { type: String, default: "", select: false },
+    password: { type: String, default: "" },
     shiftCount: { type: Number, default: 2 },
   },
   { timestamps: true }

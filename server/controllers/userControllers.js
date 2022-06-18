@@ -21,7 +21,8 @@ export const register = async (req, res, next) => {
             return res.status(200).json({
               success: true,
               message: "Successfully registered!",
-              user,
+              _id: user._id,
+              email: user.email,
               token: generateToken({ _id: user._id, email }),
             });
         })
@@ -31,9 +32,22 @@ export const register = async (req, res, next) => {
 };
 
 export const login = (req, res, next) => {
+  const { email, password } = req.body;
+
   User.findOne({ email: req.body.email })
     .then((user) => {
-      if (user) return res.status(200).json({ success: true, user });
+      user.comparePassword(password, (err, isMatched) => {
+        if (err) return next(err);
+        if (!isMatched)
+          return next(new ErrorMessage("Invalid Credntials", 401));
+        res.status(200).json({
+          success: true,
+          message: "Successfully logged in",
+          _id: user._id,
+          email: user.email,
+          token: generateToken({ _id: user._id, email }),
+        });
+      });
     })
     .catch((err) => next(err));
 };
