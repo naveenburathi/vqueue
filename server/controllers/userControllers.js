@@ -3,6 +3,7 @@
 // import { validationResult } from "express-validator";
 import User from "../models/userModel.js";
 import ErrorMessage from "../utils/errorMessage.js";
+import { generateToken } from "../utils/jwt.js";
 
 export const register = async (req, res, next) => {
   // const errors = validationResult(req);
@@ -21,6 +22,7 @@ export const register = async (req, res, next) => {
               success: true,
               message: "Successfully registered!",
               user,
+              token: generateToken({ _id: user._id, email }),
             });
         })
         .catch((err) => next(err));
