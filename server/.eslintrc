@@ -23,7 +23,6 @@
         "js": "always"
       }
     ],
-    "prettier/prettier": "error",
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
@@ -35,6 +34,12 @@
     "no-underscore-dangle": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

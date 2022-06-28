@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import ErrorMessage from "../utils/errorMessage.js";
 
 const handleError = (err, _, res) => {
