@@ -12,6 +12,8 @@ import Navbar from "./components/Navbar";
 import Auth from "./pages/Auth";
 import ShowQR from "./pages/ShowQR";
 import ScanQR from "./pages/ScanQR";
+import Queue from "./pages/Queue";
+import CreateQueue from "./pages/CreateQueue";
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/queue" element={<Queue />} />
+          <Route path="/create-queue" element={<CreateQueue />} />
           <Route path="/show-qr" element={<ShowQR />} />
           <Route path="/scan-qr" element={<ScanQR />} />
         </Routes>
