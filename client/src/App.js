@@ -8,7 +8,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Project Imports
 import Home from "./pages/Home";
 import theme from "./assets/theme";
-import Navbar from "./components/Navbar";
 import Auth from "./pages/Auth";
 import ShowQR from "./pages/ShowQR";
 import ScanQR from "./pages/ScanQR";

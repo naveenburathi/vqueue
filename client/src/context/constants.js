@@ -7,3 +7,4 @@ export const REGISTER = "REGISTER";
 export const LOGIN = "LOGIN";
 
 export const QUEUE_CREATE = "QUEUE_CREATE";
+export const QUEUE_JOIN = "QUEUE_JOIN";

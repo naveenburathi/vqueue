@@ -28,6 +28,7 @@ const ScanQR = () => {
   const [isScanCompleted, setScanCompleted] = useState(false);
   const [camera, setCamera] = useState("environment");
   const container = useRef(null);
+  const { state, actions } = useContext(AppContext);
 
   const handleError = (err) => {
     console.error(err);
@@ -38,14 +39,15 @@ const ScanQR = () => {
     if (scanData) {
       setScanCompleted(true);
       setData(JSON.parse(scanData));
+      console.log(data);
     }
   };
 
   const startScanning = () => {
     setStart((state) => !state);
-    // setTimeout(() => {
-    //   setStart(false);
-    // }, 60 * 1000);
+    setTimeout(() => {
+      setStart(false);
+    }, 60 * 1000);
   };
 
   useEffect(() => {
@@ -66,7 +68,9 @@ const ScanQR = () => {
     if (container.current) container.current.firstChild.style.left = "-10px";
   }, [container]);
 
-  console.log(container.current?.firstChild);
+  const joinQueue = () => {
+    actions.joinQueue(data._id);
+  };
 
   return (
     <>
@@ -121,6 +125,9 @@ const ScanQR = () => {
             <Box>
               <Typography variant="h5">Queue Name: {data.name}</Typography>
               <Typography variant="body2">Queue Description: {data.desc}</Typography>
+              <Button variant="contained" sx={{ mt: 3 }} onClick={joinQueue}>
+                Join
+              </Button>
             </Box>
           )}
           <Button disabled={start} variant="contained" sx={{ mt: 3 }} onClick={startScanning}>
