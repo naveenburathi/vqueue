@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import theme from "./assets/theme";
 import Navbar from "./components/Navbar";
 import Auth from "./pages/Auth";
+import ShowQR from "./pages/ShowQR";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/show-qr" element={<ShowQR />} />
         </Routes>
       </Router>
     </ThemeProvider>

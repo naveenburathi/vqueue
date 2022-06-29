@@ -36,7 +36,9 @@ const Auth = () => {
   const { state, actions } = useContext(AppContext);
   const navigate = useNavigate();
 
-  useEffect(() => state.isAuth && navigate("/"), [state]);
+  useEffect(() => {
+    state.isAuth && navigate("/");
+  }, [state]);
 
   const handleSubmit = () => {
     isLogin

@@ -21,6 +21,7 @@ export const register = async (req, res, next) => {
               message: "Successfully registered!",
               _id: user._id,
               email: user.email,
+              name: user.name,
               token: generateToken({ _id: user._id, email }),
             });
         })
@@ -36,6 +37,7 @@ export const login = (req, res, next) => {
 
   User.findOne({ email })
     .then((user) => {
+      console.log(user);
       user.comparePassword(password, (err, isMatched) => {
         if (err) return next(err);
         if (!isMatched)
@@ -45,6 +47,7 @@ export const login = (req, res, next) => {
           message: "Successfully logged in",
           _id: user._id,
           email: user.email,
+          name: user.name,
           token: generateToken({ _id: user._id, email }),
         });
       });

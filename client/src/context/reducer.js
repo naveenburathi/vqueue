@@ -11,7 +11,11 @@ const reducer = (state, action) => {
   switch (action.type) {
     case REGISTER:
     case LOGIN:
-      const user = { _id: action.payload._id, token: action.payload.token };
+      const user = {
+        _id: action.payload._id,
+        token: action.payload.token,
+        name: action.payload.name
+      };
       localStorage.setItem("isAuth", JSON.stringify(true));
       localStorage.setItem("user", JSON.stringify(user));
       return {

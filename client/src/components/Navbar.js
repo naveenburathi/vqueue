@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,6 +9,10 @@ import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+
+// Project Imports
+import { AppContext } from "../context";
 
 const HideOnScroll = ({ children }) => {
   const trigger = useScrollTrigger();
@@ -25,6 +29,8 @@ HideOnScroll.propTypes = {
 };
 
 const Navbar = (props) => {
+  const { state, actions } = useContext(AppContext);
+
   return (
     <React.Fragment>
       <HideOnScroll {...props}>
@@ -48,9 +54,15 @@ const Navbar = (props) => {
                 VQ
               </Typography>
               <Box flex={1} />
-              <Button variant="contained" href="/auth">
-                Login Now
-              </Button>
+              {!state.isAuth ? (
+                <Button variant="contained" href="/auth">
+                  Login Now
+                </Button>
+              ) : (
+                <Avatar sx={{ width: 48, height: 48, background: "#009357", color: "#fff" }}>
+                  {state.user.name.charAt(0)}
+                </Avatar>
+              )}
             </Toolbar>
           </Container>
         </AppBar>
