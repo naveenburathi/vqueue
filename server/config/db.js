@@ -1,4 +1,7 @@
+/* eslint-disable prettier/prettier */
+
 import mongoose from "mongoose";
+
 
 const connectDB = (DB_URL) => {
   const connect = mongoose.connect(DB_URL, {

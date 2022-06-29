@@ -15,7 +15,7 @@ import CContainer from "../components/CContainer";
 
 const Footer = () => {
   return (
-    <CContainer sx={{ py: { md: 6 }, background: "#1a2138" }}>
+    <CContainer sx={{ py: { md: 6 } }}>
       <Grid container spacing={2}>
         <Grid xs={12} item>
           <Box

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import PropTypes from "prop-types";
 
 // MUI Imports
@@ -16,6 +16,7 @@ import "aos/dist/aos.css";
 import lottie from "lottie-web";
 
 // Project Imports
+import { AppContext } from "../context";
 import CContainer from "../components/CContainer";
 import waiting from "../assets/animations/waiting.json";
 import Footer from "../components/Footer";
@@ -59,6 +60,7 @@ HeadLine.propTypes = {
 
 const Home = () => {
   const container = useRef(null);
+  const { state, actions } = useContext(AppContext);
 
   useEffect(() => {
     AOS.init({
@@ -113,12 +115,21 @@ const Home = () => {
                     alignItems: "flex-start",
                     flexDirection: { xs: "column", sm: "row" }
                   }}>
-                  <Button
-                    variant="contained"
-                    sx={{ width: { xs: "100%", md: "auto" } }}
-                    href="/auth">
-                    Login Now
-                  </Button>
+                  {!state.isAuth ? (
+                    <Button
+                      variant="contained"
+                      sx={{ width: { xs: "100%", md: "auto" } }}
+                      href="/auth">
+                      Login Now
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="contained"
+                      sx={{ width: { xs: "100%", md: "auto" } }}
+                      href="/join-queue">
+                      Join Queue
+                    </Button>
+                  )}
                   <Button
                     variant="outlined"
                     sx={{ ml: { sm: 2 }, mt: { xs: 2, sm: 0 }, width: { xs: "100%", md: "auto" } }}>

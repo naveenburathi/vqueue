@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 
 // MUI Imports
 import AppBar from "@mui/material/AppBar";
@@ -21,26 +21,39 @@ import Visibility from "@mui/icons-material/Visibility";
 
 // 3rd Party Imports
 import lottie from "lottie-web";
+import { useNavigate } from "react-router-dom";
 
 // Project Imports
 import authAnim from "../assets/animations/authAnim.json";
 import useForm from "../hooks/useForm";
+import { AppContext } from "../context";
 
 const Auth = () => {
   const container = useRef(null);
   const [isLogin, setLogin] = useState(true);
   const [isRememberMe, setRememberMe] = useState(true);
   const [isPass, setPass] = useState(true);
+  const { state, actions } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    state.isAuth && navigate("/");
+  }, [state]);
 
   const handleSubmit = () => {
-    console.log({ ...values, isRememberMe });
+    isLogin
+      ? actions.login({ email: values.email, password: values.password })
+      : actions.register({ name: values.name, email: values.email, password: values.password });
   };
+
   const [onSubmit, onChange, values] = useForm(handleSubmit, {
     email: "",
     password: "",
     password2: "",
     name: ""
   });
+
+  // console.log(data, error, loaded);
 
   useEffect(() => {
     const anim = lottie.loadAnimation({
