@@ -1,5 +1,5 @@
 import Axios from "../api";
-import { LOADING, SET_ALERT, REMOVE_ALERT, REGISTER } from "./constants";
+import { LOADING, SET_ALERT, REMOVE_ALERT, REGISTER, QUEUE_CREATE } from "./constants";
 import { v4 as uuid } from "uuid";
 
 const setAlert = (dispatch, msg, alertType, timeout = 2000) => {
@@ -42,6 +42,26 @@ const getActions = (dispatch) => {
           dispatch,
           error.response.status === 401
             ? "Already Registered"
+            : error.response && error.response?.data?.message
+            ? error.response?.data?.message
+            : error.message,
+          "error"
+        );
+      }
+    },
+    createQueue: async (queue) => {
+      dispatch({ type: LOADING });
+      try {
+        const token = JSON.parse(localStorage.getItem("user"))?.token;
+        const { data } = await Axios.post("/queue/create", queue, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        dispatch({ type: QUEUE_CREATE, payload: data });
+      } catch (error) {
+        setAlert(
+          dispatch,
+          error.response.status === 401
+            ? "Access Denied"
             : error.response && error.response?.data?.message
             ? error.response?.data?.message
             : error.message,

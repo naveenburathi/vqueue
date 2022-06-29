@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useContext } from "react";
 
 // MUI imports
@@ -15,9 +16,9 @@ import CContainer from "../components/CContainer";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const ShowQR = () => {
+const ShowQR = ({ queue }) => {
   const { state, actions } = useContext(AppContext);
-  const qrVal = JSON.stringify(state.queue || { name: "hello", desc: "queue desc" });
+  const qrVal = JSON.stringify(queue || {});
 
   const downloadQRCode = () => {
     const canvas = document.getElementById("qr-gen");

@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/queue" element={<Queue />} />
           <Route path="/create-queue" element={<CreateQueue />} />
           <Route path="/show-qr" element={<ShowQR />} />
-          <Route path="/scan-qr" element={<ScanQR />} />
+          <Route path="/join-queue" element={<ScanQR />} />
         </Routes>
       </Router>
     </ThemeProvider>

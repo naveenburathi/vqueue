@@ -85,13 +85,14 @@ export default function Queue() {
                     width: { xs: "100%" },
                     m: { xs: "auto", md: "0" }
                   }}
-                  href="./CreateQueue">
+                  href="/create-queue">
                   Create Queue
                 </Button>
                 <br />
                 <Button
                   size="large"
                   variant="contained"
+                  href="/join-queue"
                   sx={{
                     fontSize: { xs: 15, md: 20 },
                     width: { xs: "100%" },

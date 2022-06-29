@@ -126,8 +126,8 @@ const Home = () => {
                     <Button
                       variant="contained"
                       sx={{ width: { xs: "100%", md: "auto" } }}
-                      href="/join-queue">
-                      Join Queue
+                      href="/queue">
+                      Go to Queue
                     </Button>
                   )}
                   <Button
