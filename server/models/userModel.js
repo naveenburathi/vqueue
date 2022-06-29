@@ -5,12 +5,12 @@ const SALT_WORK_FACTOR = 12;
 
 const userSchema = mongoose.Schema(
   {
-    name: { type: String, default: "" },
+    name: {type: String, default: "" },
     email: { type: String, unique: true },
     mobile: { type: String },
     isEmailVerified: { type: Boolean, default: false },
     password: { type: String, default: "" },
-    shiftCount: { type: Number, default: 2 },
+    shiftCount: {type: Number, default: 2}
   },
   { timestamps: true }
 );

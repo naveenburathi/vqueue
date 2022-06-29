@@ -1,4 +1,5 @@
-import express from "express";
+/* eslint-disable prettier/prettier */
+import express, { json } from "express";
 import dotenv from "dotenv";
 
 // project imports
@@ -8,6 +9,7 @@ import connectDB from "./config/db.js";
 // dotenv config
 dotenv.config();
 const app = express();
+app.use(json());
 
 const { DB_URL, PORT = 4000 } = process.env;
 

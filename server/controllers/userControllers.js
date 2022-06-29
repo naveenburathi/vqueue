@@ -1,15 +1,13 @@
-/* eslint-disable no-eval */
-// import jwt from "jsonwebtoken";
-// import { validationResult } from "express-validator";
+import { SIGNIN, SIGNUP } from "../config/constants.js";
+import validate from "../validators/validate.js";
 import User from "../models/userModel.js";
 import ErrorMessage from "../utils/errorMessage.js";
 import { generateToken } from "../utils/jwt.js";
 
 export const register = async (req, res, next) => {
-  // const errors = validationResult(req);
-  // if (!errors.isEmpty()) {
-  //   return res.status(400).json({ errors: errors.array() });
-  // }
+  const { error } = validate(req.body, SIGNUP);
+  if (error) return next(new ErrorMessage(error.details[0].message, 400));
+
   const { name, email, password } = req.body;
   User.findOne({ email })
     .then((user) => {
@@ -32,9 +30,11 @@ export const register = async (req, res, next) => {
 };
 
 export const login = (req, res, next) => {
+  const { error } = validate(req.body, SIGNIN);
+  if (error) return next(new ErrorMessage(error.details[0].message, 400));
   const { email, password } = req.body;
 
-  User.findOne({ email: req.body.email })
+  User.findOne({ email })
     .then((user) => {
       user.comparePassword(password, (err, isMatched) => {
         if (err) return next(err);
