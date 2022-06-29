@@ -11,6 +11,8 @@ import theme from "./assets/theme";
 import Navbar from "./components/Navbar";
 import Auth from "./pages/Auth";
 import ShowQR from "./pages/ShowQR";
+import Queue from "./pages/Queue";
+import CreateQueue from "./pages/CreateQueue";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/queue" element={<Queue />} />
+          <Route path="/createqueue" element={<CreateQueue />} />
           <Route path="/show-qr" element={<ShowQR />} />
         </Routes>
       </Router>
