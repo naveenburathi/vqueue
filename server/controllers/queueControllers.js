@@ -21,7 +21,9 @@ export const createQueue = async (req, res, next) => {
 };
 
 export const joinQ = async (req, res, next) => {
-  const { userId, _id } = req.body;
+  const { _id } = req.body;
+  console.log(req.user);
+  const userId = req.user._id;
   console.log(userId, _id);
 
   Queue.updateOne(
@@ -59,8 +61,8 @@ export const joinQ = async (req, res, next) => {
     .catch((err) => next(err));
 };
 
-export const allQ = async (req, res, next) => {
-  const { ownerId } = req.body;
+export const getAllQ = async (req, res, next) => {
+  const ownerId = req.user._id;
   console.log(ownerId);
   Queue.find({ owner: ownerId })
     .then((list) => {
@@ -68,7 +70,7 @@ export const allQ = async (req, res, next) => {
         return res.status(200).json({
           success: true,
           message: "Successfully found List",
-          listItems: list,
+          queues: list,
         });
       }
     })
