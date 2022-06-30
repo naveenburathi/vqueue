@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import Queue from "../models/queueModel.js";
+import User from "../models/userModel.js";
 import ErrorMessage from "../utils/errorMessage.js";
 
 export const createQueue = async (req, res, next) => {
@@ -54,6 +55,22 @@ export const joinQ = async (req, res, next) => {
           }
         })
         .catch((err) => next(err));
+    })
+    .catch((err) => next(err));
+};
+
+export const allQ = async (req, res, next) => {
+  const { ownerId } = req.body;
+  console.log(ownerId);
+  Queue.find({ owner: ownerId })
+    .then((list) => {
+      if (list) {
+        return res.status(200).json({
+          success: true,
+          message: "Successfully found List",
+          listItems: list,
+        });
+      }
     })
     .catch((err) => next(err));
 };

@@ -1,5 +1,5 @@
 import express from "express";
-import { createQueue, joinQ } from "./controllers/queueControllers.js";
+import { createQueue, joinQ, allQ } from "./controllers/queueControllers.js";
 
 // project imports
 import { register, login } from "./controllers/userControllers.js";
@@ -16,6 +16,9 @@ router.post("/login", login);
 
 // Queue routes
 router.post("/queue/create", isAuth, createQueue);
-router.post("/queue/join", joinQ);
+router.post("/queue/join", isAuth, joinQ);
+
+// profile route
+router.post("/queue/user/profile", allQ);
 
 export default router;
