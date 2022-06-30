@@ -138,7 +138,7 @@ const Home = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid ref={container} item xs={12} md={6}></Grid>
+            <Grid ref={container} item xs={12} md={6} />
           </Grid>
         </CContainer>
       </Box>
