@@ -13,6 +13,8 @@ import ShowQR from "./pages/ShowQR";
 import ScanQR from "./pages/ScanQR";
 import Queue from "./pages/Queue";
 import CreateQueue from "./pages/CreateQueue";
+import JoinQueue from "./pages/JoinQueue";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
           <Route path="/queue" element={<Queue />} />
           <Route path="/create-queue" element={<CreateQueue />} />
           <Route path="/show-qr" element={<ShowQR />} />
+          <Route path="/joinqueue" element={<JoinQueue />} />
+          <Route path="/Profile" element={<Profile />} />
           <Route path="/join-queue" element={<ScanQR />} />
         </Routes>
       </Router>

@@ -1,5 +1,13 @@
 /* eslint-disable no-case-declarations */
-import { REGISTER, LOGIN, SET_ALERT, REMOVE_ALERT, QUEUE_CREATE, LOADING } from "./constants";
+import {
+  REGISTER,
+  LOGIN,
+  SET_ALERT,
+  REMOVE_ALERT,
+  QUEUE_CREATE,
+  LOADING,
+  LOGOUT
+} from "./constants";
 
 export const initialState = {
   loading: false,
@@ -39,6 +47,11 @@ const reducer = (state, action) => {
         ...state,
         alerts
       };
+    case LOGOUT:
+      localStorage.removeItem("user");
+      localStorage.removeItem("isAuth");
+      return { isAuth: false, user: null };
+
     case REMOVE_ALERT:
       const newAlerts = state.alerts.filter((alert) => alert.id !== action.payload);
       return {

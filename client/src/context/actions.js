@@ -1,5 +1,13 @@
 import Axios from "../api";
-import { LOADING, SET_ALERT, REMOVE_ALERT, REGISTER, QUEUE_CREATE, QUEUE_JOIN } from "./constants";
+import {
+  LOADING,
+  SET_ALERT,
+  LOGOUT,
+  REMOVE_ALERT,
+  REGISTER,
+  QUEUE_CREATE,
+  QUEUE_JOIN
+} from "./constants";
 import { v4 as uuid } from "uuid";
 
 const setAlert = (dispatch, msg, alertType, timeout = 2000) => {
@@ -48,6 +56,9 @@ const getActions = (dispatch) => {
           "error"
         );
       }
+    },
+    logout: () => {
+      dispatch({ type: LOGOUT });
     },
     createQueue: async (queue) => {
       dispatch({ type: LOADING });

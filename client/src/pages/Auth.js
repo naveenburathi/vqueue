@@ -36,6 +36,8 @@ const Auth = () => {
   const { state, actions } = useContext(AppContext);
   const navigate = useNavigate();
 
+  console.log(state);
+
   useEffect(() => {
     state.isAuth && navigate("/");
   }, [state]);
