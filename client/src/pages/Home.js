@@ -126,8 +126,8 @@ const Home = () => {
                     <Button
                       variant="contained"
                       sx={{ width: { xs: "100%", md: "auto" } }}
-                      href="/joinqueue">
-                      Join Queue
+                      href="/queue">
+                      Go to Queue
                     </Button>
                   )}
                   <Button
@@ -138,7 +138,7 @@ const Home = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid ref={container} item xs={12} md={6}></Grid>
+            <Grid ref={container} item xs={12} md={6} />
           </Grid>
         </CContainer>
       </Box>

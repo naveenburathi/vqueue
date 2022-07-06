@@ -8,9 +8,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Project Imports
 import Home from "./pages/Home";
 import theme from "./assets/theme";
-import Navbar from "./components/Navbar";
 import Auth from "./pages/Auth";
 import ShowQR from "./pages/ShowQR";
+import ScanQR from "./pages/ScanQR";
 import Queue from "./pages/Queue";
 import CreateQueue from "./pages/CreateQueue";
 import JoinQueue from "./pages/JoinQueue";
@@ -26,10 +26,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/queue" element={<Queue />} />
-          <Route path="/createqueue" element={<CreateQueue />} />
+          <Route path="/create-queue" element={<CreateQueue />} />
           <Route path="/show-qr" element={<ShowQR />} />
           <Route path="/joinqueue" element={<JoinQueue />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/join-queue" element={<ScanQR />} />
         </Routes>
       </Router>
     </ThemeProvider>

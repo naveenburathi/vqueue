@@ -14,6 +14,7 @@ import QueueAnimation from "../assets/animations/queuePageAnim";
 import Navbar from "../components/Navbar";
 import Img1 from "../assets/illustrations/step1.png";
 import Footer from "../components/Footer";
+import CContainer from "../components/CContainer";
 
 export default function Queue() {
   const container = useRef(null);
@@ -56,47 +57,45 @@ export default function Queue() {
   return (
     <>
       <Navbar />
-      <Box>
-        <Grid container spacing={6} sx={{ p: 2 }}>
+      <CContainer>
+        <Grid container spacing={6} alignItems="center" justifyContent="space-between">
           <Grid
+            item
+            md={6}
             ref={container}
-            xs={12}
-            sm={6}
-            sx={{ height: "100vh", display: { xs: "none", sm: "block" } }}></Grid>
-          <Grid item sx={{ margin: "auto" }} direction="column" xs={12} sm={6}>
-            {" "}
-            <Box data-aos="fade-right">
+            sx={{ width: "300px", height: "80%", display: { xs: "none", md: "block" } }}
+          />
+          <Grid item xs={12} md={6}>
+            <Box data-aos="fade-left">
               <Box mb={2} sx={{ mt: { md: -10 } }}>
                 <HeadLine>Lorem ipsum dolor sit amet</HeadLine>
               </Box>
               <Box mb={3}>
-                <Typography variant="h6" sx={{ color: "#aeb0b4" }}>
+                <Typography variant="h6">
                   Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
                   ametLorem ipsum dolor sit ametbr <br />
                   <br /> Lorem ipsum dolor sit ametLorem ipsum dolor
                 </Typography>
               </Box>
-              <Box sx={{ display: "grid" }}>
+              <Box>
                 <Button
                   size="large"
                   variant="contained"
                   sx={{
                     fontSize: { xs: 15, md: 20 },
                     width: { xs: "100%" },
-                    m: { xs: "auto", md: "0" }
+                    mb: 3
                   }}
-                  href="./CreateQueue">
+                  href="/create-queue">
                   Create Queue
                 </Button>
-                <br />
                 <Button
                   size="large"
                   variant="contained"
-                  href="./JoinQueue"
+                  href="/JoinQueue"
                   sx={{
                     fontSize: { xs: 15, md: 20 },
-                    width: { xs: "100%" },
-                    m: { xs: "auto", md: "0" }
+                    width: { xs: "100%" }
                   }}>
                   Join Queue
                 </Button>
@@ -104,85 +103,93 @@ export default function Queue() {
             </Box>
           </Grid>
         </Grid>
-      </Box>
+      </CContainer>
       <Box sx={{ pr: 10, pl: 10, pt: 5, background: "#222B45" }}>
-        <HeadLine style={{ textAlign: "center" }}>How It Works</HeadLine>
-        <Grid container direction="column">
-          <Box sx={{ mt: 4, display: "flex", alignItems: "center" }}>
-            <Typography variant="h6" sx={{ color: "#aeb0b4" }} xs={3}>
-              <h1>Step 1:</h1>
-              <h3>Lorem ipsum dolor sit amet</h3>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem
-              ipsum dolor sit ametLorem ipsum dolor sit amet
-            </Typography>
+        <CContainer>
+          <HeadLine style={{ textAlign: "center" }}>How It Works?</HeadLine>
+          <Grid container direction="column">
             <Box
-              xs={9}
-              component="img"
-              src={Img1}
-              sx={{
-                height: { xs: 333, md: 400 },
-                display: { xs: "none", sm: "block" }
-              }}></Box>
-          </Box>
-          <Box sx={{ mt: 4, display: "flex", alignItems: "center" }}>
+              sx={{ mt: 4, display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
+              <Box>
+                <Typography variant="h3" sx={{ fontWeight: 700 }}>
+                  Step 1
+                </Typography>
+                <Typography
+                  sx={{ my: 1, fontWeight: 700, fontSize: "24px !important" }}
+                  variant="h6">
+                  Lorem ipsum dolor sit amet
+                </Typography>
+                <Typography variant="body1" sx={{ fontSize: "18px" }}>
+                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                  ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                </Typography>
+              </Box>
+              <Box
+                xs={9}
+                component="img"
+                src={Img1}
+                sx={{
+                  height: { md: 400 },
+                  display: { xs: "none", md: "block" },
+                  ml: 3
+                }}></Box>
+            </Box>
             <Box
-              xs={9}
-              component="img"
-              src={Img1}
-              sx={{
-                height: { xs: 333, md: 400 },
-                display: { xs: "none", sm: "block" }
-              }}></Box>
-            <Typography
-              variant="h6"
-              sx={{ color: "#aeb0b4" }}
-              xs={3}
-              style={{ textAlign: "right" }}>
-              <h1>Step 2:</h1>
-              <h3>Lorem ipsum dolor sit amet</h3>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem
-              ipsum dolor sit ametLorem ipsum dolor sit amet
-            </Typography>
-          </Box>
-          <Box sx={{ mt: 4, display: "flex", alignItems: "center" }}>
-            <Typography variant="h6" sx={{ color: "#aeb0b4" }} xs={3}>
-              <h1>Step 3:</h1>
-              <h3>Lorem ipsum dolor sit amet</h3>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem
-              ipsum dolor sit ametLorem ipsum dolor sit amet
-            </Typography>
+              sx={{ mt: 4, display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
+              <Box
+                xs={9}
+                component="img"
+                src={Img1}
+                sx={{
+                  height: { md: 400 },
+                  display: { xs: "none", md: "block" },
+                  mr: 3
+                }}></Box>
+              <Box>
+                <Typography variant="h3" sx={{ fontWeight: 700 }}>
+                  Step 1
+                </Typography>
+                <Typography
+                  sx={{ my: 1, fontWeight: 700, fontSize: "24px !important" }}
+                  variant="h6">
+                  Lorem ipsum dolor sit amet
+                </Typography>
+                <Typography variant="body1" sx={{ fontSize: "18px" }}>
+                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                  ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                </Typography>
+              </Box>
+            </Box>
             <Box
-              xs={9}
-              component="img"
-              src={Img1}
-              sx={{
-                height: { xs: 333, md: 400 },
-                display: { xs: "none", sm: "block" }
-              }}></Box>
-          </Box>
-          <Box sx={{ mt: 4, display: "flex", alignItems: "center" }}>
-            <Box
-              xs={9}
-              component="img"
-              src={Img1}
-              sx={{
-                height: { xs: 333, md: 400 },
-                display: { xs: "none", sm: "block" }
-              }}></Box>
-            <Typography
-              variant="h6"
-              sx={{ color: "#aeb0b4" }}
-              xs={3}
-              style={{ textAlign: "right" }}>
-              <h1>Step 4:</h1>
-              <h3>Lorem ipsum dolor sit amet</h3>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem
-              ipsum dolor sit ametLorem ipsum dolor sit amet
-            </Typography>
-          </Box>
-        </Grid>
+              sx={{ mt: 4, display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
+              <Box>
+                <Typography variant="h3" sx={{ fontWeight: 700 }}>
+                  Step 1
+                </Typography>
+                <Typography
+                  sx={{ my: 1, fontWeight: 700, fontSize: "24px !important" }}
+                  variant="h6">
+                  Lorem ipsum dolor sit amet
+                </Typography>
+                <Typography variant="body1" sx={{ fontSize: "18px" }}>
+                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                  ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                </Typography>
+              </Box>
+              <Box
+                xs={9}
+                component="img"
+                src={Img1}
+                sx={{
+                  height: { md: 400 },
+                  display: { xs: "none", md: "block" },
+                  ml: 3
+                }}></Box>
+            </Box>
+          </Grid>
+        </CContainer>
       </Box>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }

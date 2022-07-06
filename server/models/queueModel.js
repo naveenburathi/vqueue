@@ -10,6 +10,7 @@ const queueSchema = mongoose.Schema(
     members: [
       {
         userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        createdAt: { type: Date, default: Date.now },
         _id: false,
       },
     ],

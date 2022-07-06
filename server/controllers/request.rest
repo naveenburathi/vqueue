@@ -1,0 +1,8 @@
+POST http://localhost:4000/queue/join
+Content-Type: application/json
+
+{
+    "userId":"62bb0f492eab7925b2add43c",
+   " _id":"62bca0c0ad41120e43f030b1"
+
+}
