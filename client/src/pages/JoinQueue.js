@@ -68,11 +68,11 @@ export default function joinqueue() {
     },
     {
       id: 2,
-      name: "Kabir's queue",
+      name: "Kabir",
       owner: "Kabir",
       avgTime: 24,
       counter: "2",
-      description: "This is the queue for stationary items."
+      description: "This is the queue for stationary items.dfss sd fs dff askdjhf akjsd fsakjd  "
     },
     {
       id: 3,

@@ -9,6 +9,9 @@ import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import AssignmentIcon from "@mui/icons-material/Assignment";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import HomeIcon from "@mui/icons-material/Home";
+import GroupsIcon from "@mui/icons-material/Groups";
 
 // 3rd Party Imports
 import AOS from "aos";
@@ -22,12 +25,13 @@ import waiting from "../assets/animations/waiting.json";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-const Feature = ({ fname, fdesc }) => {
+const Feature = ({ fname, fdesc, icon }) => {
   return (
     <Box data-aos="fade-up">
       <Box display="flex" alignItems="center" flexDirection="column" textAlign="center">
-        <Avatar sx={{ mb: 2, background: "#1F3946", width: "60px", height: "60px" }}>
-          <AssignmentIcon color="primary" />
+        <Avatar
+          sx={{ mb: 2, background: "#1F3946", width: "60px", height: "60px", color: "#00ab55" }}>
+          {icon}
         </Avatar>
         <Typography sx={{ mb: 1 }} variant="h6">
           {fname}
@@ -40,7 +44,8 @@ const Feature = ({ fname, fdesc }) => {
 
 Feature.propTypes = {
   fname: PropTypes.string.isRequired,
-  fdesc: PropTypes.string.isRequired
+  fdesc: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired
 };
 
 const HeadLine = ({ children, ...rest }) => {
@@ -106,7 +111,7 @@ const Home = () => {
                     <Typography component={"span"} color="primary" variant="h6">
                       Virtual Queue
                     </Typography>{" "}
-                    you can stay in queue without being in queue
+                    You can stay in queue without being in a queue.
                   </Typography>
                 </Box>
                 <Box
@@ -147,23 +152,26 @@ const Home = () => {
           <Grid container>
             <Grid item xs={12} md={4} sx={{ pl: 2, pt: 2 }}>
               <Feature
-                fname={"Feature 1"}
-                fdesc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique enim iusto vero nam
-                repellat aspernatur"
+                fname={"Saves your precious time"}
+                fdesc="VQUEUE makes you save your time by allowing you to join any queue without standing in the long queue.
+"
+                icon={<AccessTimeIcon />}
               />
             </Grid>
             <Grid item xs={12} md={4} sx={{ pl: 2, pt: 2 }}>
               <Feature
-                fname={"Feature 1"}
-                fdesc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique enim iusto vero nam
-                repellat aspernatur"
+                fname={"Join from your home"}
+                fdesc="VQUEUE lets you join any queue from the comfort of your home. Just search the queue and scan QR of the queue.
+"
+                icon={<HomeIcon />}
               />
             </Grid>
             <Grid item xs={12} md={4} sx={{ pl: 2, pt: 2 }}>
               <Feature
-                fname={"Feature 1"}
-                fdesc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique enim iusto vero nam
-                repellat aspernatur"
+                fname={"Create your queue"}
+                fdesc="VQUEUE allows you to manage your own queue by just registering and generating a QR code at VQUEUE at free of cost.
+"
+                icon={<GroupsIcon />}
               />
             </Grid>
           </Grid>
