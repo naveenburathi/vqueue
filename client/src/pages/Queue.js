@@ -13,6 +13,8 @@ import lottie from "lottie-web";
 import QueueAnimation from "../assets/animations/queuePageAnim";
 import Navbar from "../components/Navbar";
 import Img1 from "../assets/illustrations/step1.png";
+import Img2 from "../assets/illustrations/step2.png";
+import Img3 from "../assets/illustrations/step3.png";
 import Footer from "../components/Footer";
 import CContainer from "../components/CContainer";
 
@@ -68,13 +70,20 @@ export default function Queue() {
           <Grid item xs={12} md={6}>
             <Box data-aos="fade-left">
               <Box mb={2} sx={{ mt: { md: -10 } }}>
-                <HeadLine>Lorem ipsum dolor sit amet</HeadLine>
+                <HeadLine>
+                  <HeadLine component="span" color="primary">
+                    VQ{" "}
+                  </HeadLine>
+                  is the new age Queue
+                </HeadLine>
               </Box>
               <Box mb={3}>
                 <Typography variant="h6">
-                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                  ametLorem ipsum dolor sit ametbr <br />
-                  <br /> Lorem ipsum dolor sit ametLorem ipsum dolor
+                  In the new age of technology, conventional queues are not the perfect choice.
+                  Whether it&apos;s standing in a queue or organinsing a queue, VQ helps you in
+                  both. <br />
+                  <br />
+                  So let &apos;s say goodbye to the conventional queues by joining VQ.
                 </Typography>
               </Box>
               <Box>
@@ -117,11 +126,12 @@ export default function Queue() {
                 <Typography
                   sx={{ my: 1, fontWeight: 700, fontSize: "24px !important" }}
                   variant="h6">
-                  Lorem ipsum dolor sit amet
+                  Join VQ platform
                 </Typography>
                 <Typography variant="body1" sx={{ fontSize: "18px" }}>
-                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                  ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                  The first step in your journey to virtual queues is to join VQ platform. It&apos;s
+                  totally free of cost and we don&apos; ask for any card details or your any other
+                  personal information.
                 </Typography>
               </Box>
               <Box
@@ -129,7 +139,7 @@ export default function Queue() {
                 component="img"
                 src={Img1}
                 sx={{
-                  height: { md: 400 },
+                  height: { md: 350 },
                   display: { xs: "none", md: "block" },
                   ml: 3
                 }}></Box>
@@ -139,24 +149,25 @@ export default function Queue() {
               <Box
                 xs={9}
                 component="img"
-                src={Img1}
+                src={Img2}
                 sx={{
-                  height: { md: 400 },
+                  height: { md: 350 },
                   display: { xs: "none", md: "block" },
                   mr: 3
                 }}></Box>
-              <Box>
+              <Box sx={{ textAlign: "right" }}>
                 <Typography variant="h3" sx={{ fontWeight: 700 }}>
-                  Step 1
+                  Step 2
                 </Typography>
                 <Typography
                   sx={{ my: 1, fontWeight: 700, fontSize: "24px !important" }}
                   variant="h6">
-                  Lorem ipsum dolor sit amet
+                  Join existing queue
                 </Typography>
                 <Typography variant="body1" sx={{ fontSize: "18px" }}>
-                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                  ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                  Next step is to join a queue. Joining a queue can be done by scanning the QR of
+                  the queue or just by searching it on the VQ platform. VQ will let you know about
+                  the expected time you have to wait for your turn.
                 </Typography>
               </Box>
             </Box>
@@ -164,22 +175,23 @@ export default function Queue() {
               sx={{ mt: 4, display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
               <Box>
                 <Typography variant="h3" sx={{ fontWeight: 700 }}>
-                  Step 1
+                  Step 3
                 </Typography>
                 <Typography
                   sx={{ my: 1, fontWeight: 700, fontSize: "24px !important" }}
                   variant="h6">
-                  Lorem ipsum dolor sit amet
+                  Sit back and relax
                 </Typography>
                 <Typography variant="body1" sx={{ fontSize: "18px" }}>
-                  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
-                  ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                  That&apos;s it. Now you have got into the queue without standing in the real
+                  queue. Now you got the waiting time. You can visit only when it&apos;s your turn
+                  at your own comfort.
                 </Typography>
               </Box>
               <Box
                 xs={9}
                 component="img"
-                src={Img1}
+                src={Img3}
                 sx={{
                   height: { md: 400 },
                   display: { xs: "none", md: "block" },

@@ -17,13 +17,12 @@ export default function QueueCard({ queue }) {
 
   return (
     <>
-      <Card sx={{ minWidth: 275 }}>
+      <Card sx={{ minWidth: 275, height: "100%" }}>
         <CardContent>
-          {counter != -1 && (
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-              {`Counter No: ${counter}`}
-            </Typography>
-          )}
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            {`Counter No: ${counter == -1 ? "Not Available" : counter}`}
+          </Typography>
+
           <Grid container spacing={2}>
             <Grid item xs={8}>
               <Typography variant="h5" component="div">
@@ -32,7 +31,7 @@ export default function QueueCard({ queue }) {
             </Grid>
             <Grid item xs={4}>
               <Button size="small" variant="contained">
-                Join Queue
+                View Queue
               </Button>
             </Grid>
           </Grid>
