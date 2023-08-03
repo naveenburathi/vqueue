@@ -26,7 +26,7 @@ const Footer = () => {
               justifyContent: "space-between"
             }}>
             <Box component="a" href="/" mb={{ xs: 1, sm: 0 }}>
-              Logo
+              VQ
             </Box>
             <Box display="flex" alignItems="center">
               <Typography component="a" href="/" sx={{ mt: 1, mr: 2 }}>

@@ -19,7 +19,6 @@ import MenuItem from "@mui/material/MenuItem";
 import { AppContext } from "../context";
 
 const HideOnScroll = ({ children }) => {
-  console.log("hello");
   const trigger = useScrollTrigger();
 
   return (

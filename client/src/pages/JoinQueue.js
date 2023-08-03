@@ -103,7 +103,6 @@ export default function joinqueue() {
       console.log(val);
       setIsSearch(1);
 
-      // for (let i = 0; i < data.length; i++) {}
       setSearchedItems(data);
       setVal("");
     }

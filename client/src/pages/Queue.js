@@ -101,7 +101,7 @@ export default function Queue() {
                 <Button
                   size="large"
                   variant="contained"
-                  href="/JoinQueue"
+                  href="/Join-queue"
                   sx={{
                     fontSize: { xs: 15, md: 20 },
                     width: { xs: "100%" }
