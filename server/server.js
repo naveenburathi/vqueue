@@ -11,7 +11,8 @@ dotenv.config();
 const app = express();
 app.use(json());
 
-const { DB_URL, PORT = 4000 } = process.env;
+DB_URL  = process.env.DB_URL;
+PORT=process.env.PORT||4000
 
 connectDB(DB_URL);
 configureExpress(app);
