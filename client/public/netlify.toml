@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://vq-backend.onrender.com"
+  status = 200
+  force = true

@@ -10,24 +10,30 @@ import handleError from "../middlewares/handleError.js";
 import ErrorMessage from "../utils/errorMessage.js";
 
 const configureExpress = (app) => {
-  const whitelist = process.env.WHITELISTED_DOMAINS
-    ? process.env.WHITELISTED_DOMAINS.split(",")
-    : [];
+  // const whitelist = process.env.WHITELISTED_DOMAINS
+  //   ? process.env.WHITELISTED_DOMAINS.split(",")
+  //   : [];
 
-  const corsOptions = {
-    origin(origin, cb) {
-      if (!origin || whitelist.indexOf(origin) !== -1) {
-        cb(null, true);
-      } else {
-        cb(new ErrorMessage("Not allowed by CORS", 500));
-      }
-    },
-    credentials: true,
-  };
+  // const corsOptions = {
+  //   origin(origin, cb) {
+  //     if (!origin || whitelist.indexOf(origin) !== -1) {
+  //       cb(null, true);
+  //     } else {
+  //       cb(new ErrorMessage("Not allowed by CORS", 500));
+  //     }
+  //   },
+  //   credentials: true,
+  // };
 
   app.use(logger("dev"));
   app.use(compression());
-  app.use(cors(corsOptions));
+  // app.use(cors(corsOptions));
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
   app.use(express.json({ limit: "5mb" }));
   app.use(express.urlencoded({ limit: "5mb", extended: true }));
   app.use("/", router);

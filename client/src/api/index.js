@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ENDPOINT = process.env.REACT_APP_ENDPOINT || "http://localhost:4000";
+const ENDPOINT = "https://vq-backend.onrender.com";
 
 const accessToken = localStorage.getItem("accessToken");
 
